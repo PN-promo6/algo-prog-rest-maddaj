@@ -41,16 +41,26 @@ let concertTours = [
     { name: 'The Division Bell Tour', year: '1994' }
 ];
 
+let labels = [
+    { name: 'EMI Columbia' },
+    { name: 'Tower' },
+    { name: 'Harvest' },
+    { name: 'Capitol' },
+    { name: 'Columbia' },
+    { name: 'Sony Music' },
+    { name: 'EMI' },
+    { name: 'Parlophone' },
+]
+
 const express = require('express');
 const app = express();
 app.listen(3000);
 
 const cors = require('cors'); //Module servant à gérer l'accès à notre API
 let corsOptions = {
-    origin: "http://localhost:4200" //ou origin: “*” pour que toute les requêtes soient acceptées
+    origin: "*" //ou origin: “*” pour que toute les requêtes soient acceptées
 }
 app.use(cors(corsOptions));
-
 
 app.get('/albums', function (req, res) {
     res.send(albums);
@@ -60,4 +70,7 @@ app.get('/members', function (req, res) {
 });
 app.get('/concertTours', function (req, res) {
     res.send(concertTours);
+});
+app.get('/labels', function (req, res) {
+    res.send(labels);
 });
