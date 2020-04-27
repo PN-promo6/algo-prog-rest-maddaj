@@ -58,7 +58,7 @@ app.listen(3000);
 
 const cors = require('cors'); //Module servant à gérer l'accès à notre API
 let corsOptions = {
-    origin: "*" //ou origin: “*” pour que toute les requêtes soient acceptées
+    origin: "*" //pour que toute les requêtes soient acceptées, ("*" uniquement pour le dev sinon mettre une URL)
 }
 app.use(cors(corsOptions));
 
